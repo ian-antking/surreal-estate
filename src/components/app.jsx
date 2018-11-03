@@ -1,5 +1,7 @@
 import React from 'react';
+import NavBar from './nav-bar';
 import '../styles/app.scss';
+import '../styles/nav-bar.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +13,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>Hello World!</h1>
+      <React.Fragment>
+        <NavBar />
+      </React.Fragment>
     );
   }
 }

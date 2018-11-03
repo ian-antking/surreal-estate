@@ -1,0 +1,29 @@
+.nav-bar{
+    background-color: #502F4C;
+    border-bottom: 5px solid #000000;
+    display: inline-block;
+    font-size: 42pt;
+    width: 100%;
+    height: 150px;
+}
+
+
+.logo{
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.nav{
+    display: inline-block;
+}
+
+.item{
+    display: inline-block;
+    font-size: 30pt;
+    padding: 10px;
+}
+
+.item:hover{
+    cursor: pointer;
+    color: #70587C;
+}
