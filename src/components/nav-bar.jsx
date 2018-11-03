@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -9,10 +10,10 @@ const NavBar = () => {
         <FontAwesomeIcon className="icon" icon={faHome} /><span>Surreal Estate</span>
       </div>
       <div className="nav">
-        <ul>
-          <li className="item">One</li>
-          <li className="item">Two</li>
-        </ul>
+          <React.Fragment>
+            <Link to="/" className="item">View Properties</Link>
+            <Link to="/addProperties" className="item">Add Properties</Link>
+          </React.Fragment>
       </div>
     </div>
   );
