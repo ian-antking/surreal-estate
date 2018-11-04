@@ -11,7 +11,7 @@
 form{
     display: flex;
     flex-flow: column;
-    width: 100%;
+    width: 75%;
 }
 
 .input{
@@ -20,12 +20,25 @@ form{
     display: flex;
 }
 
-
-
-.input  * {
+.input  :not(label) {
     width: 100%;
+    border-radius: 10px;
+}
+
+.input label{
+    padding-right: 20px;
+    width: 25%;
 }
 
 button{
-    width: 100%;
+    text-decoration: none;
+    font-size: 2em;
+    background-color: #502F4C;
+    border: solid 3px black;
+}
+
+button:hover{
+    cursor: pointer;
+    color: #70587C;
+    
 }
