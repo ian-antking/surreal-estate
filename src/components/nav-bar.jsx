@@ -10,10 +10,20 @@ const NavBar = () => {
         <FontAwesomeIcon className="icon" icon={faHome} /><span>Surreal Estate</span>
       </div>
       <div className="nav">
-          <React.Fragment>
-            <Link to="/" className="item">View Properties</Link>
-            <Link to="/addProperties" className="item">Add Properties</Link>
-          </React.Fragment>
+        <React.Fragment>
+          <Link
+            to="/"
+            className="item"
+          >
+            View Properties
+          </Link>
+          <Link
+            to="/addProperties"
+            className="item"
+          >
+            Add Properties
+          </Link>
+        </React.Fragment>
       </div>
     </div>
   );

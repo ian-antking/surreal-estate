@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBar from './nav-bar';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Switch, Route } from 'react-router';
+import { Switch, Route } from 'react-router-dom';
 import Properties from './properties';
 import AddProperties from './add-properties';
 import '../styles/app.scss';

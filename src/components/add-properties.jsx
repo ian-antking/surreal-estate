@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import '../styles/add-property.scss';
 
 class AddProperties extends React.Component {
@@ -19,7 +20,10 @@ class AddProperties extends React.Component {
 
   handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(this.state.fields);
+    axios.post('http://localhost:3000/api/v1/PropertyListing', this.state.fields)
+      .then((response) => {
+        console.log(response);
+      });
   };
 
   handleFieldChange = (event) => {
@@ -42,7 +46,7 @@ class AddProperties extends React.Component {
   render() {
     return (
       <div className="add-property">
-      <h1>Add Your Property</h1>
+        <h1>Add Your Property</h1>
         <form onSubmit={this.handleAddProperty}>
           <div className="input">
             <label
@@ -96,10 +100,6 @@ class AddProperties extends React.Component {
                 'Sheffield',
                 'Liverpool',
               ])}
-              <option value="Manchester">Manchester</option>
-              <option value="Leeds">Leeds</option>
-              <option value="Sheffield">Sheffield</option>
-              <option value="Liverpool">Liverpool</option>
             </select>
           </div>
           <div className="input">
