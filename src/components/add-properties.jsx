@@ -1,11 +1,15 @@
 import React from 'react';
 import axios from 'axios';
+import Alert from './alert';
 import '../styles/add-property.scss';
 
 class AddProperties extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      alertMessage: '',
+      isSuccess: false,
+      isFailure: false,
       fields: {
         title: '',
         type: 'flat',
@@ -19,10 +23,24 @@ class AddProperties extends React.Component {
   }
 
   handleAddProperty = (event) => {
+    this.setState({
+      alertMessage: '',
+      isSuccess: false,
+      isFailure: false,
+    });
     event.preventDefault();
     axios.post('http://localhost:3000/api/v1/PropertyListing', this.state.fields)
       .then((response) => {
-        console.log(response);
+        this.setState({
+          alertMessage: 'Property Added',
+          isSuccess: true,
+        })
+      })
+      .catch((response) => {
+        this.setState({
+          alertMessage: 'Something went wrong!',
+          isFailure: true,
+        })
       });
   };
 
@@ -46,6 +64,11 @@ class AddProperties extends React.Component {
   render() {
     return (
       <div className="add-property">
+        <Alert
+          message={this.state.alertMessage}
+          success={this.state.isSuccess}
+          failure={this.state.isFailure}
+        />
         <h1>Add Your Property</h1>
         <form onSubmit={this.handleAddProperty}>
           <div className="input">

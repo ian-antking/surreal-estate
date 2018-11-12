@@ -42,3 +42,15 @@ button:hover{
     color: #70587C;
     
 }
+
+.alert.failure{
+    color: red;
+    background-color: pink;
+    border: 2px red solid; 
+}
+
+.alert.success{
+    color: green;
+    background-color: palegreen;
+    border: 2px green solid;
+}

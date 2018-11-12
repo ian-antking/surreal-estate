@@ -16,5 +16,5 @@ it('renders a success message', () => {
   const wrapper = Enzyme.shallow((
     <Alert message={success} success />
   ));
-  expect(wrapper.find('.alert-success').text()).toBe(success);
+  expect(wrapper.find('.alert.success').text()).toBe(success);
 });
