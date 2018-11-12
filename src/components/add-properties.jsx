@@ -30,17 +30,17 @@ class AddProperties extends React.Component {
     });
     event.preventDefault();
     axios.post('http://localhost:3000/api/v1/PropertyListing', this.state.fields)
-      .then((response) => {
+      .then(() => {
         this.setState({
           alertMessage: 'Property Added',
           isSuccess: true,
-        })
+        });
       })
-      .catch((response) => {
+      .catch(() => {
         this.setState({
           alertMessage: 'Something went wrong!',
           isFailure: true,
-        })
+        });
       });
   };
 
