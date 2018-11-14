@@ -22,31 +22,31 @@ beforeEach(() => {
   ));
 });
 
-it('renders the property tile', () => {
+it('renders the property tite', () => {
   expect(wrapper.find('.property-card__title').text()).toBe(mockProperty.title);
 });
 
 it('renders the property type', () => {
-  expect(wrapper.find('.property-card__type').text()).toBe(mockProperty.title);
+  expect(wrapper.find('.property-card__type').text()).toBe(mockProperty.type);
 });
 
 it('renders the property bathrooms', () => {
-  expect(wrapper.find('.property-card__bathrooms').text()).toBe(mockProperty.title);
+  expect(wrapper.find('.property-card__bathrooms').text()).toBe(mockProperty.bathrooms);
 });
 
 it('renders the property bedrooms', () => {
-  expect(wrapper.find('.property-card__bedrooms').text()).toBe(mockProperty.title);
+  expect(wrapper.find('.property-card__bedrooms').text()).toBe(mockProperty.bedrooms);
 });
 
 it('renders the property price', () => {
-  expect(wrapper.find('.property-card__price').text()).toBe(mockProperty.title);
+  expect(wrapper.find('.property-card__price').text()).toBe(mockProperty.price);
 });
 
 it('renders the property city', () => {
-  expect(wrapper.find('.property-card__city').text()).toBe(mockProperty.title);
+  expect(wrapper.find('.property-card__city').text()).toBe(mockProperty.city);
 });
 
 it('renders the property email', () => {
-  expect(wrapper.find('.property-card__email').text()).toBe(mockProperty.title);
+  expect(wrapper.find('.property-card__email').text()).toBe(mockProperty.email);
 });
 
