@@ -5,6 +5,7 @@ import Properties from './properties';
 import AddProperties from './add-properties';
 import '../styles/app.scss';
 import '../styles/nav-bar.scss';
+import '../styles/alert.scss';
 
 class App extends React.Component {
   constructor(props) {
