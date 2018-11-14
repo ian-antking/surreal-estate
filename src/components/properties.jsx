@@ -1,6 +1,7 @@
 import React from 'react';
 import PropertyCard from './property-card';
 import axios from 'axios';
+import '../styles/properties.scss';
 
 class Properties extends React.Component {
   constructor(props) {
@@ -21,14 +22,18 @@ class Properties extends React.Component {
 
   render() {
     return (
-      this.state.properties.map(property => {
-        return (
-          <PropertyCard
-            key={property._id}
-            property={property}
-          />
-        );
-      })
+      <div className="property-cards">
+        {
+          this.state.properties.map(property => {
+            return (
+              <PropertyCard
+                key={property._id}
+                property={property}
+              />
+            );
+          })
+      }
+      </div>
     );
   }
 }
