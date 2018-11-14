@@ -1,0 +1,40 @@
+.property-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 10px;
+    background-color: #F9F4F5;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.card-item{
+    display: flex;
+    justify-content: center;
+}
+
+.icon{
+    padding-right: 10px;
+}
+
+.btn{
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+    background-color: #502F4C;
+    border: solid 3px black;
+    border-radius: 10pt;
+    padding: 5px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: #70587C;
+    
+}
+
+.property-card__email{
+    padding: 10px;
+}
+
