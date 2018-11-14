@@ -5,6 +5,7 @@ import {
   faBed,
   faPoundSign,
   faEnvelope,
+  faHome,
 } from '@fortawesome/free-solid-svg-icons';
 
 import '../styles/property-card.scss';
@@ -12,6 +13,9 @@ import '../styles/property-card.scss';
 const PropertyCard = (props) => {
   return ((
     <div className="property-card">
+      <div className="property-card__image card-item">
+        <FontAwesomeIcon icon={faHome} />
+      </div>
       <div className="property-card__title card-item">
         <span>
           <b>

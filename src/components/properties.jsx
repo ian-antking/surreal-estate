@@ -1,23 +1,22 @@
 import React from 'react';
 import PropertyCard from './property-card';
+import axios from 'axios';
 
 class Properties extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      properties: [
-        {
-          id: '1',
-          title: 'mockTitle',
-          type: 'mockType',
-          bathrooms: 'mockBathrooms',
-          bedrooms: 'mockBedrooms',
-          price: 'mockPrice',
-          city: 'mockCity',
-          email: 'mockEmail',
-        },
-      ],
+      properties: [],
     };
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:3000/api/v1/PropertyListing')
+      .then((response) => {
+        this.setState({
+          properties: response.data,
+        });
+      });
   }
 
   render() {
@@ -25,7 +24,7 @@ class Properties extends React.Component {
       this.state.properties.map(property => {
         return (
           <PropertyCard
-            key={property.id}
+            key={property._id}
             property={property}
           />
         );
