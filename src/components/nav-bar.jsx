@@ -15,13 +15,13 @@ const NavBar = () => {
             to="/"
             className="item"
           >
-            View Properties
+            View
           </Link>
           <Link
             to="/addProperties"
             className="item"
           >
-            Add Properties
+            Add
           </Link>
         </React.Fragment>
       </div>

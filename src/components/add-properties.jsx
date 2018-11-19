@@ -55,7 +55,7 @@ class AddProperties extends React.Component {
 
   renderOptions(options) {
     return (
-      options.map((option) => {
+      options.sort().map((option) => {
         return (<option key={option} value={option}>{option}</option>);
       })
     );

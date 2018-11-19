@@ -2,6 +2,7 @@ import React from 'react';
 import PropertyCard from './property-card';
 import axios from 'axios';
 import Alert from './alert';
+import { Link } from 'react-router-dom';
 import '../styles/properties.scss';
 import '../styles/alert.scss';
 
@@ -13,6 +14,22 @@ class Properties extends React.Component {
       isError: false,
       alertMessage: '',
     };
+  }
+
+  renderLinks(links) {
+    return (
+      links.sort().map((link) => {
+        return (
+          <Link
+            className="filter-link"
+            key={link}
+            to={`?query={"city": "${link}"}`}
+          >
+            {link}
+          </Link>
+        );
+      })
+    );
   }
 
   componentDidMount() {
@@ -33,18 +50,28 @@ class Properties extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Alert message={this.state.alertMessage} failure={this.state.isError} />
-        <div className="property-cards">
-          {
-            this.state.properties.map(property => {
-              return (
-                <PropertyCard
-                  key={property._id}
-                  property={property}
-                />
-              );
-            })
-        }
+        <div className="properties">
+          <div className="filter-bar">
+            {this.renderLinks([
+              'Manchester',
+              'Liverpool',
+              'Sheffield',
+              'Leeds',
+            ])}
+          </div>
+          <Alert message={this.state.alertMessage} failure={this.state.isError} />
+          <div className="property-cards">
+            {
+              this.state.properties.map(property => {
+                return (
+                  <PropertyCard
+                    key={property._id}
+                    property={property}
+                  />
+                );
+              })
+          }
+          </div>
         </div>
       </React.Fragment>
     );

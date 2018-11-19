@@ -1,5 +1,22 @@
+.properties{
+    display: flex;
+}
+
+.filter-bar{
+    background-color: white;
+    border-right: 5px solid black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
 .property-cards{
    display: flex;
    flex-flow: wrap;
    justify-content: space-around;
+}
+
+.filter-link{
+    margin: 10px;   
 }
