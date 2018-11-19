@@ -47,11 +47,23 @@ class Properties extends React.Component {
       });
   }
 
+  componentDidUpdate(prevProps) {
+    const { search } = this.props.location;
+
+    if (prevProps.location.search !== search) {
+      axios.get(`http://localhost:3000/api/v1/PropertyListing${search}`)
+        .then(({ data: properties }) => this.setState({ properties }))
+        .catch(err => console.error(err));
+    }
+  
+  }  
+
   render() {
     return (
       <React.Fragment>
         <div className="properties">
           <div className="filter-bar">
+            <span className="filter-label">Filter by City:</span>
             {this.renderLinks([
               'Manchester',
               'Liverpool',
