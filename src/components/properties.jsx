@@ -55,8 +55,7 @@ class Properties extends React.Component {
         .then(({ data: properties }) => this.setState({ properties }))
         .catch(err => console.error(err));
     }
-  
-  }  
+  }
 
   render() {
     return (
@@ -70,6 +69,7 @@ class Properties extends React.Component {
               'Sheffield',
               'Leeds',
             ])}
+            <span className="filter-label">Sort By:</span>
           </div>
           <Alert message={this.state.alertMessage} failure={this.state.isError} />
           <div className="property-cards">
